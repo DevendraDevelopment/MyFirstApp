@@ -13,14 +13,24 @@
         android:theme="@style/Theme.MyFirstApp"
         tools:targetApi="31">
         <activity
-            android:name=".ConsLayActivity"
-            android:exported="true">
+            android:name=".NavigationMenuActivity"
+            android:exported="true"
+            android:label="@string/title_activity_navigation_menu"
+            android:theme="@style/Theme.MyFirstApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".BottomMenuActivity"
+            android:exported="true"
+            android:label="@string/title_activity_bottom_menu">
+        </activity>
+        <activity
+            android:name=".ConsLayActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivityListView"
             android:exported="false" />
@@ -29,9 +39,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>
