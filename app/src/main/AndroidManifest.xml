@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,10 +16,8 @@
         android:theme="@style/Theme.MyFirstApp"
         tools:targetApi="31">
         <activity
-            android:name=".NavigationMenuActivity"
-            android:exported="true"
-            android:label="@string/title_activity_navigation_menu"
-            android:theme="@style/Theme.MyFirstApp.NoActionBar">
+            android:name=".RecyclerViewActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,10 +25,29 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BottomMenuActivity"
+            android:name=".ItemDetailHostActivity"
             android:exported="true"
-            android:label="@string/title_activity_bottom_menu">
+            android:label="@string/title_activity_item_detail_host"
+            android:resizeableActivity="true"
+            tools:targetApi="24">
         </activity>
+        <activity
+            android:name=".ImageLoadingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".TabsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_tabs"
+            android:theme="@style/Theme.MyFirstApp.NoActionBar" />
+        <activity
+            android:name=".NavigationMenuActivity"
+            android:exported="true"
+            android:label="@string/title_activity_navigation_menu"
+            android:theme="@style/Theme.MyFirstApp.NoActionBar" />
+        <activity
+            android:name=".BottomMenuActivity"
+            android:exported="false"
+            android:label="@string/title_activity_bottom_menu" />
         <activity
             android:name=".ConsLayActivity"
             android:exported="false" />
