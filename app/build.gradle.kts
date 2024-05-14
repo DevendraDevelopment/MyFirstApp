@@ -52,9 +52,11 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.circleimageview)
-    implementation("com.github.bumptech.glide:glide:4.14.2")
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
+    implementation("androidx.core:core-splashscreen:1.0.0")
+    implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.androidx.recyclerview)
-    annotationProcessor("com.github.bumptech.glide:compiler:4.14.2")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
