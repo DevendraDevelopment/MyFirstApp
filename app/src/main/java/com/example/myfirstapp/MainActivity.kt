@@ -24,6 +24,13 @@ class MainActivity : AppCompatActivity() {
 
         val button = binding.button//findViewById<Button>(R.id.button)
 
+        val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
+
+        if (sharedPreferences.getBoolean("isLogged", false)){
+            val intent = Intent(this, InfoActivity::class.java)
+            startActivity(intent)
+        }
+
         //TODO define the action
         button.setOnClickListener {
 
@@ -36,10 +43,18 @@ class MainActivity : AppCompatActivity() {
             } else if (binding.editTextTextPassword.text.isEmpty()) {
                 binding.editTextTextPassword.error = "Password can't be empty"
             } else {
+
+                //Store the data
+                val editor = sharedPreferences.edit()
+                editor.putString("email", binding.editTextTextEmail.text.toString())
+                editor.putString("password", binding.editTextTextPassword.text.toString())
+                editor.putBoolean("isLogged", true)
+                editor.apply()
+
                 val intent: Intent
                 intent = Intent(this, InfoActivity::class.java)
-                intent.putExtra("email", binding.editTextTextEmail.text.toString())
-                intent.putExtra("password", binding.editTextTextPassword.text.toString())
+//                intent.putExtra("email", binding.editTextTextEmail.text.toString())
+//                intent.putExtra("password", binding.editTextTextPassword.text.toString())
                 startActivity(intent)
 //                try {
 //                    //TODO Getting the data for further use

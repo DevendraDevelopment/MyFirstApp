@@ -16,21 +16,17 @@
         android:theme="@style/Theme.MyFirstApp"
         tools:targetApi="31">
         <activity
-            android:name=".RecyclerViewActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:name=".SharedPrefActivity"
+            android:exported="true">
         </activity>
+        <activity
+            android:name=".RecyclerViewActivity"
+            android:exported="true" />
         <activity
             android:name=".ItemDetailHostActivity"
             android:exported="true"
             android:label="@string/title_activity_item_detail_host"
-            android:resizeableActivity="true"
-            tools:targetApi="24">
-        </activity>
+            android:resizeableActivity="true" />
         <activity
             android:name=".ImageLoadingActivity"
             android:exported="true" />
@@ -59,7 +55,13 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
