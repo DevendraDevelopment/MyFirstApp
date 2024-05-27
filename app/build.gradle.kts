@@ -54,6 +54,7 @@ dependencies {
     implementation(libs.circleimageview)
     implementation(libs.glide)
     annotationProcessor(libs.compiler)
+    implementation("com.google.android.gms:play-services-location:21.0.1")
     implementation("androidx.core:core-splashscreen:1.0.0")
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.androidx.recyclerview)
